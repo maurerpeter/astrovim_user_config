@@ -14,9 +14,17 @@ local config = {
       "kaicataldo/material.vim", -- colorscheme = "material"
       "morhetz/gruvbox", -- colorscheme = "gruvbox"
       "joshdick/onedark.vim", -- colorscheme = "onedark"
-      "sonph/onehalf" -- colorscheme = "onehalfdark" | "onehalflight"
+      "sonph/onehalf", -- colorscheme = "onehalfdark" | "onehalflight"
     }
-  }
+  },
+
+  mappings = {
+    -- visual mode
+    v = {
+      ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down by a line" },
+      ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up by a line" },
+    }
+  },
 }
 
 return config
