@@ -19,11 +19,22 @@ local config = {
   },
 
   mappings = {
+    -- normal mode
+    n = {
+      ["<leader>r"] = { ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+        desc = "Replace selection occurrences with sed" },
+    },
+
     -- visual mode
     v = {
       ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down by a line" },
       ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up by a line" },
-    }
+    },
+
+    -- insert mode
+    i = {
+      ["<C-c>"] = { "<Esc>", desc = "Exit insert mode via Ctrl+c" },
+    },
   },
 }
 
