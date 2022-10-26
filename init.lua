@@ -55,10 +55,21 @@ local config = {
     -- visual mode
     v = {
       -- need to debug the following two - issues with multi-line selections
-      ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down by a line" },
-      ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up by a line" },
+      ["p"] = { '"_dP', desc = "Paste in place of selection without yanking" },
       ["<leader>y"] = { '"+y', desc = "Yank to system clipboard" },
       ["<leader>d"] = { '"_d', desc = "Delete without yanking to register" },
+    },
+
+    -- Visual Block
+    x = {
+      ["<A-j>"] = { ":move '>+1<CR>gv-gv", desc = "Move selection down by a line" },
+      ["<A-k>"] = { ":move '<-2<CR>gv-gv", desc = "Move selection up by a line" },
+      -- option-j
+      ["∆"] = { ":move '>+1<CR>gv-gv", desc = "Move selection down by a line" },
+      -- option-k
+      ["˚"] = { ":move '<-2<CR>gv-gv", desc = "Move selection up by a line" },
+      ["J"] = { ":move '>+1<CR>gv-gv", desc = "Move selection down by a line" },
+      ["K"] = { ":move '<-2<CR>gv-gv", desc = "Move selection up by a line" },
     },
 
     -- insert mode
