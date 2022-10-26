@@ -11,6 +11,8 @@ local config = {
       "morhetz/gruvbox", -- colorscheme = "gruvbox"
       "joshdick/onedark.vim", -- colorscheme = "onedark"
       "sonph/onehalf", -- colorscheme = "onehalfdark" | "onehalflight",
+
+      "nvim-treesitter/nvim-treesitter-context",
     },
 
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
