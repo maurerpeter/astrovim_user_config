@@ -17,6 +17,7 @@ local config = {
         event = "BufRead",
         config = function() require("lsp_signature").setup() end,
       },
+      "APZelos/blamer.nvim",
     },
 
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -93,5 +94,7 @@ local config = {
 
 -- uncomment following line when using gruvbox
 -- vim.g.gruvbox_contrast_dark = "hard"
+
+vim.g.blamer_enabled = 1
 
 return config
