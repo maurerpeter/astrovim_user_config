@@ -13,6 +13,10 @@ local config = {
       "sonph/onehalf", -- colorscheme = "onehalfdark" | "onehalflight",
 
       "nvim-treesitter/nvim-treesitter-context",
+      ["ray-x/lsp_signature.nvim"] = {
+        event = "BufRead",
+        config = function() require("lsp_signature").setup() end,
+      },
     },
 
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
