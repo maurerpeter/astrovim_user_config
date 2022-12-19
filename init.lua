@@ -1,7 +1,7 @@
 --              AstroNvim Configuration Table
 
 local config = {
-  colorscheme = "onedark",
+  colorscheme = "sonokai",
 
   plugins = {
     init = {
@@ -11,8 +11,9 @@ local config = {
       "morhetz/gruvbox", -- colorscheme = "gruvbox"
       "joshdick/onedark.vim", -- colorscheme = "onedark"
       "sonph/onehalf", -- colorscheme = "onehalfdark" | "onehalflight",
+      "sainnhe/sonokai",
 
-      "nvim-treesitter/nvim-treesitter-context",
+      -- ["nvim-treesitter/nvim-treesitter-context"] = { after = "nvim-treesitter" },
       ["ray-x/lsp_signature.nvim"] = {
         event = "BufRead",
         config = function() require("lsp_signature").setup() end,
@@ -43,7 +44,7 @@ local config = {
   mappings = {
     -- normal mode
     n = {
-      ["<leader>r"] = {
+      ["<leader>R"] = {
         ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
         desc = "Replace selection occurrences with sed",
       },
@@ -63,7 +64,7 @@ local config = {
     v = {
       -- need to debug the following two - issues with multi-line selections
       ["p"] = { '"_dP', desc = "Paste in place of selection without yanking" },
-      ["<leader>y"] = { '"+y', desc = "Yank to system clipboard" },
+      -- ["<leader>y"] = { '"+y', desc = "Yank to system clipboard" },
       ["<leader>d"] = { '"_d', desc = "Delete without yanking to register" },
     },
 
@@ -88,6 +89,9 @@ local config = {
   options = {
     opt = {
       spell = true, -- sets vim.opt.spell
+    },
+    g = {
+      sonokai_style = "shusia",
     },
   },
 }
