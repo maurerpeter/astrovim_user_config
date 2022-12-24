@@ -19,6 +19,12 @@ local config = {
         config = function() require("lsp_signature").setup() end,
       },
       "APZelos/blamer.nvim",
+      ["ggandor/leap.nvim"] = {
+        keys = { "s", "S" },
+        config = function()
+          require('leap').add_default_mappings()
+        end,
+      },
     },
 
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
